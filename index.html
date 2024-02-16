@@ -10,7 +10,9 @@
 
 <script>
 var name;var room;
-var socket = io.connect('http://192.168.0.108:52300');
+//var socket = io.connect('http://192.168.0.108:52300');
+var socket = io.connect('https://multiplayer-websocket-server-production.up.railway.app/');
+
 function buttonclick(input){
  // e.preventDefault();
   console.log(input);
