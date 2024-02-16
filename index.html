@@ -201,9 +201,9 @@ body::backdrop {
 <body>
 <div>
 
-  <form id="nameform" onsubmit="namesubmit();SetFullscreen();return false">
+  <form id="nameform" >
     <input type="text" id="name" name="name"  placeholder="請輸入您的名字" required><br><br>
-    <button type="submit" style="width: 31vw;height:18vh;margin-top: 2vh;border-radius: 90px;background-color: #363225;color: white;font-size: 3vw;letter-spacing: 0.1em;">加入</button>
+    <button type="button" onclick="namesubmit();SetFullscreen();" style="width: 31vw;height:18vh;margin-top: 2vh;border-radius: 90px;background-color: #363225;color: white;font-size: 3vw;letter-spacing: 0.1em;">加入</button>
   </form>
 </div>
 <div class="hidden" id="controller">
@@ -241,12 +241,12 @@ window.addEventListener('load', function() {
 })
 
 function SetFullscreen(){
-  /*var elem = document.body;
+  var elem = document.body;
   elem.requestFullscreen().catch((error) => {
     log.textContent += `${error}\n`;
   });
   screen.orientation
-    .lock("landscape-secondary");*/
+    .lock("landscape-secondary");
 }
 
 var joystick1up=true;
