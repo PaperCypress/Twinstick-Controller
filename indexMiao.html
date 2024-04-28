@@ -209,6 +209,7 @@ body::backdrop {
   position: fixed;
   top:10px;
   right:10px;
+  z-index: 1;
 }
 
 </style>
@@ -226,13 +227,12 @@ body::backdrop {
   </div>
 </div>
 <div class="hidden" id="controller">
-  <div id="controllertip">
   <div id="fullscreenbtn">
-    <button type="button" onclick="SetFullscreen();" style="width: 10vw;height:5vh;margin: 2px;border-radius: 90px;background-color: #9e835f;color: white;font-size: 1.5vw;letter-spacing: 0.1em;">全螢幕</button>
+    <button type="button" onclick="SetFullscreen();" style="width: 12vw;height:8vh;margin: 2px;border-radius: 90px;background-color: #9e835f;color: white;font-size: 1.5vw;letter-spacing: 0.1em;">全螢幕</button>
   </div>
-    <p type="text" id="tip" style="font-size: 1em; margin-top: 2vh; line-height: 28px;">※ 請將手機轉為橫向進行遊玩，如跑版請點全螢幕按鈕或重整頁面 ※<br>※ 使用虛擬搖桿進行遊玩，按住右搖桿滑動瞄準後放開即可發射長矛 ※</p>
-    <img src="assets/Logotype_web.png"   style="display: block; width:20%; margin-left: auto; margin-right: auto; margin-top: 25vh;">
-    
+  <div id="controllertip">
+    <p type="text" id="tip" style="font-size: 1em; margin-top: 2vh; line-height: 28px;">※ 請將手機轉為橫向進行遊玩，如跑版請按全螢幕按鈕或重整頁面 ※<br>※ 使用虛擬搖桿進行遊玩，按住右搖桿滑動瞄準後放開即可發射長矛 ※</p>
+    <img src="assets/Logotype_web.png"   style="display: block; width:30%; margin-left: auto; margin-right: auto; margin-top: 22vh;">
   </div>
   <div id="joy3Div">
     <p type="text" id="tip" style="color: #914623; font-size: 1em;margin-bottom: -40px;font-weight: bold;">選擇/移動角色</p>
@@ -269,7 +269,7 @@ function SetFullscreen(){
 
 var joystick1up=true;
 var joystick2up=true;
-var joy3Param = { "title": "joystick3","width": 300, "height": 300, "internalFillColor": "#6b2b19"};
+var joy3Param = { "title": "joystick3","width": 300, "height": 300, "internalFillColor": "#402a1b"};
 var Joy3 = new JoyStick('joy3Div', joy3Param);
 
 var joy3IinputPosX = document.getElementById("joy3PosizioneX");
@@ -295,7 +295,7 @@ setInterval(function(){
   
 
 }, 50);
-var joy4Param = { "title": "joystick4","width": 300, "height": 300, "internalFillColor": "#6b2b19" };
+var joy4Param = { "title": "joystick4","width": 300, "height": 300, "internalFillColor": "#402a1b" };
 var Joy4 = new JoyStick('joy4Div', joy4Param);
 setInterval(function(){ 
   if(Number(Joy4.GetPressed())==1){

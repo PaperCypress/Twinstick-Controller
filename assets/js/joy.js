@@ -78,7 +78,7 @@ var JoyStick = (function(container, parameters, callback)
         height = (typeof parameters.height === "undefined" ? 0 : parameters.height),
         internalFillColor = (typeof parameters.internalFillColor === "undefined" ? "#00AA00" : parameters.internalFillColor),
         internalLineWidth = (typeof parameters.internalLineWidth === "undefined" ? 2 : parameters.internalLineWidth),
-        internalStrokeColor = (typeof parameters.internalStrokeColor === "undefined" ? "#22020a" : parameters.internalStrokeColor),
+        internalStrokeColor = (typeof parameters.internalStrokeColor === "undefined" ? "#0f0807" : parameters.internalStrokeColor),
         externalLineWidth = (typeof parameters.externalLineWidth === "undefined" ? 2 : parameters.externalLineWidth),
         externalStrokeColor = (typeof parameters.externalStrokeColor ===  "undefined" ? "#914623" : parameters.externalStrokeColor),
         autoReturnToCenter = (typeof parameters.autoReturnToCenter === "undefined" ? true : parameters.autoReturnToCenter);
@@ -180,7 +180,7 @@ var JoyStick = (function(container, parameters, callback)
         context.lineTo(movedX - arrowSize, movedY - arrowSpacing + arrowSize);
         context.lineTo(movedX + arrowSize, movedY - arrowSpacing + arrowSize);
         context.closePath();
-        context.fillStyle = '#f5ddb8';
+        context.fillStyle = '#faf2cd';
         context.fill();
         // 下
         context.beginPath();
@@ -188,7 +188,7 @@ var JoyStick = (function(container, parameters, callback)
         context.lineTo(movedX - arrowSize, movedY + arrowSpacing - arrowSize);
         context.lineTo(movedX + arrowSize, movedY + arrowSpacing - arrowSize);
         context.closePath();
-        context.fillStyle = '#f5ddb8';
+        context.fillStyle = '#faf2cd';
         context.fill();
         // 左
         context.beginPath();
@@ -196,7 +196,7 @@ var JoyStick = (function(container, parameters, callback)
         context.lineTo(movedX - arrowSpacing + arrowSize, movedY - arrowSize);
         context.lineTo(movedX - arrowSpacing + arrowSize, movedY + arrowSize);
         context.closePath();
-        context.fillStyle = '#f5ddb8';
+        context.fillStyle = '#faf2cd';
         context.fill();
         // 右
         context.beginPath();
@@ -204,7 +204,7 @@ var JoyStick = (function(container, parameters, callback)
         context.lineTo(movedX + arrowSpacing - arrowSize, movedY - arrowSize);
         context.lineTo(movedX + arrowSpacing - arrowSize, movedY + arrowSize);
         context.closePath();
-        context.fillStyle = '#f5ddb8';
+        context.fillStyle = '#faf2cd';
         context.fill();
     }
 
