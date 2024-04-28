@@ -65,7 +65,7 @@ socket.on('RequestName',function(){
     display: none!important;
   }
   #controller{
-  position: absolute;
+  position: fixed;
   height: 100vh;
   width: 100vw;
   margin: 0;
@@ -214,15 +214,16 @@ body::backdrop {
 
   <div id="nameform" >
     <img src="assets/Logotype_web.png"   style="width:30%; margin-bottom:1vh ;">
-    <p type="text" id="tip">※ 請將手機轉為橫向顯示進行遊玩 ※</p>
+    <p type="text" id="tip">※ 請將手機轉為橫向進行遊玩 ※</p>
     <input type="text" id="name" name="name"  placeholder="請輸入您的英文名稱" required><br>
     <button type="button" onclick="namesubmit();SetFullscreen();" style="width: 30vw;height:16vh;margin-top: 2vh;border-radius: 90px;background-color: #363225;color: white;font-size: 3vw;letter-spacing: 0.1em;">加入</button>
   </div>
 </div>
 <div class="hidden" id="controller">
   <div id="controllertip">
-    <p type="text" id="tip" style="font-size: 1.2em; margin-top: 5vh;">※ 使用虛擬搖桿進行遊玩，按住右搖桿滑動瞄準後放開即可發射長矛 ※</p>
-    <img src="assets/Logotype_web.png"   style="display: block; width:25%; margin-left: auto; margin-right: auto; margin-top: 30vh;">
+    <p type="text" id="tip" style="font-size: 1em; margin-top: 5vh;">※ 請將手機轉為橫向進行遊玩，如跑版請點擊畫面空白處即可恢復 ※</p>
+    <p type="text" id="tip" style="font-size: 1em; margin-top: 1vh;">※ 使用虛擬搖桿進行遊玩，按住右搖桿滑動瞄準後放開即可發射長矛 ※</p>
+    <img src="assets/Logotype_web.png"   style="display: block; width:20%; margin-left: auto; margin-right: auto; margin-top: 25vh;">
   </div>
   <div id="joy3Div">
     <p type="text" id="tip" style="color: #914623; font-size: 1em;margin-bottom: -40px;font-weight: bold;">選擇/移動角色</p>
