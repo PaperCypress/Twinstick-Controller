@@ -78,9 +78,9 @@ var JoyStick = (function(container, parameters, callback)
         height = (typeof parameters.height === "undefined" ? 0 : parameters.height),
         internalFillColor = (typeof parameters.internalFillColor === "undefined" ? "#00AA00" : parameters.internalFillColor),
         internalLineWidth = (typeof parameters.internalLineWidth === "undefined" ? 2 : parameters.internalLineWidth),
-        internalStrokeColor = (typeof parameters.internalStrokeColor === "undefined" ? "#003300" : parameters.internalStrokeColor),
+        internalStrokeColor = (typeof parameters.internalStrokeColor === "undefined" ? "#22020a" : parameters.internalStrokeColor),
         externalLineWidth = (typeof parameters.externalLineWidth === "undefined" ? 2 : parameters.externalLineWidth),
-        externalStrokeColor = (typeof parameters.externalStrokeColor ===  "undefined" ? "#008000" : parameters.externalStrokeColor),
+        externalStrokeColor = (typeof parameters.externalStrokeColor ===  "undefined" ? "#914623" : parameters.externalStrokeColor),
         autoReturnToCenter = (typeof parameters.autoReturnToCenter === "undefined" ? true : parameters.autoReturnToCenter);
 
     callback = callback || function(StickStatus) {};
@@ -170,6 +170,42 @@ var JoyStick = (function(container, parameters, callback)
         context.lineWidth = internalLineWidth;
         context.strokeStyle = internalStrokeColor;
         context.stroke();
+
+        // 绘制箭头
+        var arrowSize = 10; // 箭头大小
+        var arrowSpacing = 60; // 箭头间距
+        // 上
+        context.beginPath();
+        context.moveTo(movedX, movedY - arrowSpacing); 
+        context.lineTo(movedX - arrowSize, movedY - arrowSpacing + arrowSize);
+        context.lineTo(movedX + arrowSize, movedY - arrowSpacing + arrowSize);
+        context.closePath();
+        context.fillStyle = '#f5ddb8';
+        context.fill();
+        // 下
+        context.beginPath();
+        context.moveTo(movedX, movedY + arrowSpacing);
+        context.lineTo(movedX - arrowSize, movedY + arrowSpacing - arrowSize);
+        context.lineTo(movedX + arrowSize, movedY + arrowSpacing - arrowSize);
+        context.closePath();
+        context.fillStyle = '#f5ddb8';
+        context.fill();
+        // 左
+        context.beginPath();
+        context.moveTo(movedX - arrowSpacing, movedY);
+        context.lineTo(movedX - arrowSpacing + arrowSize, movedY - arrowSize);
+        context.lineTo(movedX - arrowSpacing + arrowSize, movedY + arrowSize);
+        context.closePath();
+        context.fillStyle = '#f5ddb8';
+        context.fill();
+        // 右
+        context.beginPath();
+        context.moveTo(movedX + arrowSpacing, movedY); 
+        context.lineTo(movedX + arrowSpacing - arrowSize, movedY - arrowSize);
+        context.lineTo(movedX + arrowSpacing - arrowSize, movedY + arrowSize);
+        context.closePath();
+        context.fillStyle = '#f5ddb8';
+        context.fill();
     }
 
     /**

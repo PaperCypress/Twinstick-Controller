@@ -69,7 +69,6 @@ socket.on('RequestName',function(){
   height: 100vh;
   width: 100vw;
   margin: 0;
-
   justify-content: center;
   }
  
@@ -146,7 +145,7 @@ socket.on('RequestName',function(){
   top: 0;bottom: 0;left: 0;right: 0;
   margin: auto;
   width: 80vw;
-  height: 65vh;
+  height: 70vh;
   text-align: center;
   align-items: center;
 }
@@ -196,7 +195,7 @@ body::backdrop {
 }
 #tip{
   color: rgb(95, 83, 77);
-  font-size: 3vh;
+  font-size: 3.2vh;
   letter-spacing: 0.1em;
   text-align: center;
 }
@@ -209,15 +208,21 @@ body::backdrop {
 <div>
 
   <div id="nameform" >
-    <img src="assets/Logotype_web.png"   style="width:30%; margin-bottom:2vh ;">
+    <img src="assets/Logotype_web.png"   style="width:30%; margin-bottom:1vh ;">
     <p type="text" id="tip">※ 請將手機轉為橫向顯示進行遊玩 ※</p>
-    <input type="text" id="name" name="name"  placeholder="請輸入您的名字(英文)" required><br>
+    <input type="text" id="name" name="name"  placeholder="請輸入您的英文名稱" required><br>
     <button type="button" onclick="namesubmit();SetFullscreen();" style="width: 30vw;height:16vh;margin-top: 2vh;border-radius: 90px;background-color: #363225;color: white;font-size: 3vw;letter-spacing: 0.1em;">加入</button>
   </div>
 </div>
 <div class="hidden" id="controller">
-  <div id="joy3Div" ></div>  
-  <div id="joy4Div"></div>
+  <img src="assets/Logotype_web.png"   style="display: block; width:15%; margin-left: auto; margin-right: auto; margin-top: 3%;margin-bottom: 3vh;">
+  <p type="text" id="tip" style="font-size: 2vh;">※ 使用下方虛擬搖桿進行遊玩，按住右搖桿滑動瞄準後放開即可發射長矛 ※</p>
+  <div id="joy3Div">
+    <p type="text" id="tip" style="color: #914623; font-size: 2vh;margin-bottom: -40px;font-weight: bold;">選擇/移動角色</p>
+  </div>  
+  <div id="joy4Div">
+    <p type="text" id="tip" style="color: #914623; font-size: 2vh;margin-bottom: -40px;font-weight: bold;">確認/瞄準攻擊</p>
+  </div>
 </div>
 
 </body>
@@ -247,7 +252,7 @@ function SetFullscreen(){
 
 var joystick1up=true;
 var joystick2up=true;
-var joy3Param = { "title": "joystick3","width": 300, "height": 300, "internalFillColor": "#000000","internalLineWidth":0 };
+var joy3Param = { "title": "joystick3","width": 300, "height": 300, "internalFillColor": "#6b2b19"};
 var Joy3 = new JoyStick('joy3Div', joy3Param);
 
 var joy3IinputPosX = document.getElementById("joy3PosizioneX");
@@ -273,7 +278,7 @@ setInterval(function(){
   
 
 }, 50);
-var joy4Param = { "title": "joystick4","width": 300, "height": 300, "internalFillColor": "#000000" };
+var joy4Param = { "title": "joystick4","width": 300, "height": 300, "internalFillColor": "#6b2b19" };
 var Joy4 = new JoyStick('joy4Div', joy4Param);
 setInterval(function(){ 
   if(Number(Joy4.GetPressed())==1){
